@@ -1,0 +1,35 @@
+<div class="logIn" id="logInDiv">
+    <div id="logIn-down">
+        <div id="iWrapper-header">
+            <a href="#"><img src="img/Client/Global/Icons/Facebook_icon.jpg" alt=""></a>
+            <a href="#"><img src="img/Client/Global/Icons/Gplus_icon.svg.png" alt=""></a>
+            <a href="#"><img src="img/Client/Global/Icons/twitter_icon.png" alt=""></a>
+            <a href="#"><img src="img/Client/Global/Icons/linkedin_icon.png" alt=""></a>
+        </div>
+        <div id="logIn-hr">
+            <span>or</span>
+        </div>
+        <div id="logIn-form-wrapper">
+            <form id="form-logIn" method="POST" action="/user/login" onsubmit="validate_login(event)">
+                <div id="email">
+                    <label for="email"> Email</label>
+                    <input type="email" name="email" id="email_login" />
+                </div>
+                <div class="logIn-errors" id="logIn-email-errors">
+                    {{errors.email}}
+                </div>
+                <div id="pwd">
+                    <div id="pwdWrapper">
+                        <label for="password">Password</label>
+                        <a href="#">Forgot your password</a>
+                    </div>
+                    <input type="password" name="password" id="pwd_login" />
+                </div>
+                <div class="logIn-errors" id="logIn-pwd-errors">
+                    {{errors.password}}
+                </div>
+                <input type="submit" value="Sign In" class="btn" id="submit-login">
+            </form>
+        </div>
+    </div>
+</div>

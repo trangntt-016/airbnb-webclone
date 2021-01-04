@@ -1,0 +1,83 @@
+{{>head}}
+
+<body>
+    <!----- Header and Navigation Bar------->
+    {{>header}}
+    <div id="dashboard">
+        <div id="dashboard-wrapper">
+            <h2>Hello {{user.fname}} {{user.lname}},</h2><br>
+            <a href="/admin/add">Add a new room</a>
+        </div>
+    </div>
+    <div id="bodyAlt">
+        <div id="bodyWrapper">
+            {{!-- <div id="filter-map-wrapper">
+                <div id="filter">
+                    <div class="hidden">Filters</div>
+                    <div class="shown">Cancellation flexibility</div>
+                    <div class="shown">Type of place</div>
+                    <div class="shown">Price</div>
+                    <div class="shown">Instant Book</div>
+                    <div class="shown">More filters</div>
+                </div>
+            </div> --}}
+
+            <div id="productListing">
+                <div id="productsWrapper">
+                    {{#each rooms}}
+
+                    <div class="pdContainer">
+                        <a href="/room/{{this._id}}">
+                            <div id="pd1" class="pdImgContainer">
+                                <img src="/img/rooms/{{image.[0]}}" alt="">
+                                {{#if superhot}}
+                                <div class="superhot">SUPERHOT</div>
+                                {{/if}}
+                                <a href="/admin/edit/{{_id}}"
+                                    style="position: absolute;top: 8px;left: 10px;text-decoration: none;background: #fff;padding: 3px 7px 3px 7px;border-radius: 5px;">Edit</a>
+                                </div>
+                            </a>
+                            <div id="wrapperpdContent">
+                                    <div class="pdContent">
+                                        {{!-- <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <p class="ratePoints">{{ratePoints}}</p>
+                                        <p class="noOfrates">({{noOfRates}})</p>
+                                    </div> --}}
+                                        <div class="pdLocation">
+                                            <p class="locationType">{{convertStr location}}</p>
+                                            <p> - {{city}}</p>
+                                        </div>
+                                        <div class="pdTitle" style="font-weight:bold;">{{title}}</div>
+                                        <div class="price">
+                                            {{!-- {{#if priceSale}}
+                                        <p class="priceSale">${{priceSale}}</p>
+                                        {{/if}} --}}
+                                            <p class="currentPrice"><b>${{price}} CAD/</b>night</p>
+                                        </div>
+                                        {{!-- <p class="totalPrice">${{price}} CAD total</p> --}}
+                                    </div>
+                                    {{#if rareFind}}
+                                    <div class="rarefind">
+                                        <i class="fas fa-gem"></i>
+                                        <p>Rare find</p>
+                                    </div>
+                                    {{/if}}
+                            </div>
+
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------- Footer ------------->
+    {{>footer}}
+    <!----- Modal Section: Sign Up ------->
+    {{#if signup}}
+    {{>signUpForm}}
+    {{/if}}
+    {{{script}}}
+</body>
+
+</html>

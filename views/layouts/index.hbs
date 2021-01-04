@@ -1,0 +1,251 @@
+{{>head}}
+
+<body>
+    {{>header}}
+    <!---------- A booking search section ----------------------->
+    <div id="bookingSearch">
+        <div id="bookingBanner">
+            <div id="form-bookingSearch">
+                <form action="/rooms">
+                    <div id="title">
+                        <h1>Vacation rentals in Canada</h1>
+                        <p>Book unique places to stay and things to do</p>
+                    </div>
+                    <div id="container-locations">
+                        <label for="location">Location</label>
+                        <select name="location" id="location">
+                            <option value="" selected disabled hidden>Choose here</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="ON">Ontario</option>
+                            <option value="QC">Quebec</option>
+                        </select>
+                    </div>
+                    <div id="container-departure">
+                        <div id="checkIn">
+                            <label for="check-in">Check In</label>
+                            <input type="text" name="checkIn" placeholder="Add dates">
+                        </div>
+                        <hr>
+                        <div id="checkOut">
+                            <label for="check-out">Check Out</label>
+                            <input type="text"name="checkOut"  placeholder="Add dates">
+                        </div>
+                        <!----------- Calendar CheckIn PopUp ----------------->
+                        <div class="calendar" id="checkInCalendar">
+                            <div class="container-calendar">
+                                <div class="container-monthYear">
+                                    <i class="fas fa-angle-left pre"></i>
+                                    <p></p>
+                                    <i class="fas fa-angle-right next"></i>
+                                </div>
+                                <div class="container-weekdays">
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                    <div>Sun</div>
+                                </div>
+                                <div class="container-days">
+                                    <!-- displayDaysOfMonth()--->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calendar" id="checkOutCalendar">
+                            <div class="container-calendar">
+                                <div class="container-monthYear">
+                                    <i class="fas fa-angle-left pre"></i>
+                                    <p></p>
+                                    <i class="fas fa-angle-right next"></i>
+                                </div>
+                                <div class="container-weekdays">
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                    <div>Sun</div>
+                                </div>
+                                <div class="container-days">
+                                    <!-- displayDaysOfMonth()--->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!----------- Guests Information ------------->
+                    <div id="container-guests">
+                        <div id="adult">
+                            <label for="adult">ADULTS</label>
+                            <input type="number" name="noOfAdult" placeholder="0" value="1">
+                        </div>
+                        <hr>
+                        <div id="children">
+                            <label for="children">CHILDREN</label>
+                            <input type="number" name="noOfChildren"  placeholder="0" value="0">
+                        </div>
+                    </div>
+                    <div id="container-btn-bookingSearchForm">
+                        <input type="submit" value="Search">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!------ Promotion Section ----------->
+    <div id="promotion">
+        <div id="promotionWrapper">
+            <div class="container">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn1.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-container w-2 h-2">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn2.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn3.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-container w-3">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn4.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-container w-2">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn5.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="image">
+                            <img src="./img/Client/MainPage/promotionSection/promotion-bn6.jpg" alt="Promotion">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discountWrapper">
+                <div id="discountContainer">
+                    <div id="discount-text">Join and get up to $42 off your first trip at</div>
+                    <div id="imgWrapper">
+                        <img src="./img/Client/Global/logo/greenLogo.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!------ info Section ---------------->
+    <section class="sections" id="infoSection">
+        <div class="header-infoSection">
+            <h2>Why AirB&B?</h2>
+        </div>
+        <div class="containersWrapper">
+            <div class="container-info">
+                <div class="wrapperImg">
+                    <img src="img/Client/MainPage/infoSection/cancel.jpg" alt="">
+                </div>
+
+                <div class="textInfoWrapper">
+                    <h4>Flexibility</h4>
+                    <p>The cancellation policy on an Airbnb can be negotiated</p>
+                </div>
+
+            </div>
+            <div class="container-info before">
+                <div>
+                    <img src="img/Client/MainPage/infoSection/lessmoney.jpg" alt="">
+                </div>
+
+                <div class="textInfoWrapper">
+                    <h4>Save More</h4>
+                    <p>You can book an entire place for half the price hotels are charging</p>
+                </div>
+            </div>
+            <div class="container-info before">
+                <div>
+                    <img src="img/Client/MainPage/infoSection/swimming.jpg" alt="">
+                </div>
+
+                <div class="textInfoWrapper">
+                    <h4>Amenities</h4>
+                    <p>Swimming pool, gym room, parking lot, wifi and more </p>
+                </div>
+            </div>
+            <div class="container-info before">
+                <div>
+                    <img src="img/Client/MainPage/infoSection/liveLikeLocal.jpg" alt="">
+                </div>
+
+                <div class="textInfoWrapper">
+                    <h4>Live like a local</h4>
+                    <p>You can live like a local and see the world from their point of view</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-vid">
+        <div id="wrapperblock">
+            <!---Left hand side-->
+            <section id="left-hand">
+                <div id="parent-info-text">
+                    <h1>"Don't Go There, Live There"</h1>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.
+                        <br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam molestias, inventore ipsa fugiat
+                        accusamus consequatur, voluptatem recusandae quidem voluptates minima odit sint quam itaque,
+                        beatae ad provident perferendis tempore exercitationem.
+                        <br />
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate vel quis, reprehenderit
+                        commodi consectetur molestias quae possimus numquam illo repudiandae accusamus quas, ipsum
+                        maiores architecto inventore enim modi facere nulla?
+                    </p>
+                </div>
+            </section>
+            <!-- Right-hand Side -->
+            <section class="right-hand" controls>
+                <iframe src="https://www.youtube.com/embed/y6-_m4yLgZU" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
+        </div>
+    </div>
+    <!------------- Footer ------------->
+    {{>footer}}
+    <!----- Modal Section: Sign Up ------->
+    {{>signUpForm}}
+ </div>
+
+    {{{script}}}
+
+</body>
+
+</html>

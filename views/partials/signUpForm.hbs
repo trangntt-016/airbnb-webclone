@@ -1,0 +1,97 @@
+<div class="bg-modal" id="signUpPage">
+    <div class="signUp">
+        <div class="close" onclick="closeModal__signUp()">&times;</div>
+        <div id="header-signUp">
+            <img src="img/Client/Global/logo/whileLogo.jpg" alt="">
+            <p>Already have an account? <a href="#">Log In</a></p>
+        </div>
+        <div id="body-signUp">
+            <form id="form-signUp" method="POST" action="/user/signup" onsubmit="validate_signup(event)">
+                <div id="wrapper-body-data">
+                    <div id="wrapper-input">
+                        <div class="wrapper-err-msg">
+                            <input type="text" placeholder="First Name" name="fname" id="firstname" value = "{{user.fname}}"/>
+                            <div class="signUp-errors" id="errors-fName"></div>
+                        </div>
+                        <div class="wrapper-err-msg">
+                            <input type="text" placeholder="Last Name" name="lname" id="lastname" value = "{{user.lname}}"/>
+                            <div class="signUp-errors" id="errors-lName"></div>
+                        </div>
+                        <div class="wrapper-err-msg">
+                            <input type="email" placeholder="Email" name="email" id="email_signup"/>
+                            
+                            <div class="signUp-errors" id="errors-email">{{errors.email}}</div>
+                        
+                        </div>
+                        <div class="wrapper-err-msg">
+                            <input type="password" placeholder="Create A Password" name="password" id="pwd_signup" value = "{{user.password}}"/>
+                            <div class="signUp-errors" id="errors-pwd"></div>
+                        </div>
+                    </div>
+
+                    <div id="alt-signUp">
+                        <!---Facebook ----->
+                        <div class="social-btn" id="facebook">
+                            <img src="img/Client/Global/Icons/Facebook_icon.jpg" alt="">
+                            <a href="#">Continue with Facebook</a>
+                        </div>
+                        <!---Google ----->
+                        <div class="social-btn" id="google">
+                            <img src="img/Client/Global/Icons/Gplus_icon.svg.png" alt="">
+                            <a href="#">Continue with Google</a>
+                        </div>
+                        <!---Twitter ----->
+                        <div class="social-btn" id="twitter">
+                            <img src="img/Client/Global/Icons/twitter_icon.png" alt="">
+                            <a href="#">Continue with Twitter</a>
+                        </div>
+                        <!--- Linkedin ----->
+                        <div class="social-btn" id="linkedin">
+                            <img src="img/Client/Global/Icons/linkedin_icon.png" alt="">
+                            <a href="#">Continue with LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="birthday">
+                    <h4>Birthday</h4>
+                    <p>To sign up you need to be at least 18. Other people who use Airbnb won't see your birthday.
+                    </p>
+                    <div id="wrapper-bdselect">
+                        <select name="month" id="MOB">
+                            <option value="">Month</option>
+                        </select>
+
+                        <select name="day" id="DOB">
+                            <option value="">Day</option>
+                        </select>
+
+                        <select name="year" id="YOB" >
+                            <option value="">Year</option>
+                        </select>
+
+                    </div>
+                    <div class="signUp-errors" id="errors-birthday">
+                       
+                    </div>
+                </div>
+                <div id="wrapper-footer-signUp">
+                    <div id="wrapper-btnIcon">
+                        <input type="submit" value="Sign Up" class="btn" id="submit-signup">
+                        <p>or</p>
+                        <div id="wrapperIcons">
+                            <a href="https://www.facebook.com/"><img src="img/Client/Global/Icons/Facebook_icon.jpg"
+                                    alt=""></a>
+                            <a href="https://gmail.com/"><img src="img/Client/Global/Icons/Gplus_icon.svg.png"
+                                    alt=""></a>
+                            <a href="https://twitter.com/"><img src="img/Client/Global/Icons/twitter_icon.png"
+                                    alt=""></a>
+                            <a href="https://www.linkedin.com/"><img src="img/Client/Global/Icons/linkedin_icon.png"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

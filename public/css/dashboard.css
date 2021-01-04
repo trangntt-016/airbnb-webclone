@@ -1,0 +1,24 @@
+#dashboard {
+
+    width: 100%;
+}
+
+#dashboard-wrapper {
+
+    margin: 30px 150px 30px 150px;
+}
+
+#dashboard-wrapper h2 {
+
+    font-size: 1.2em;
+}
+
+#dashboard-wrapper h3 {
+
+    margin: 20px 0 20px;
+}
+
+#dashboard-wrapper p {
+
+    margin-bottom: 50px;
+}

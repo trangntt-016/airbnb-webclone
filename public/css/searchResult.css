@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #2E6051;
+}
+
+/*Header*/
+
+#bookingHeadWrapper {
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+    min-width: 210px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: fit-content;
+    /* font-size: 70%; */
+}
+
+
+hr {
+    margin: 0 10px 0 10px;
+    height: 20px;
+    border: none;
+    background: lightgray;
+    width: .3px;
+}
+
+#searchIcon {
+    position: absolute;
+    float: right;
+    right: 0;
+    padding: 7px;
+    background: #2E6051;
+    border-radius: 100%;
+    margin: 5px;
+    width: 1.3em;
+    font-size: .8em;
+}
+
+#searchIcon i {
+    color: #C5C096;
+}
+
+#citySearch,
+#timeSearch,
+#guestSearch {
+    width: fit-content;
+    /* font-size: .8em; */
+}
+
+/*Body - Listing Room*/
+
+#bodyAlt {
+    width: 100%;
+    height: fit-content;
+}
+
+#bodyWrapper {
+    margin: 20px 150px 0px 150px;
+}
+
+#titlewrapper div {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+#content-header-wrapper h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+
+}
+
+#filter-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-weight: lighter;
+    margin-top: 40px;
+}
+
+#filter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+#filter div {
+    padding: 5px 10px 5px 10px;
+    border-left: 1px solid lightgray;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+#map div {
+    font-family: 'Roboto', sans-serif;
+}
+
+#filter div:hover {
+
+    transition: .5s;
+    background: lightgray;
+}
+
+/*Product Listing Page*/
+#productListing {
+    margin-top: 40px;
+
+}
+
+#productListing div,
+#productListing p,
+#productListing a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+#alert b {
+    font-weight: bold;
+}
+
+#productsWrapper {
+    margin-top: 20px;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 2.5rem;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+#wrapperpdContent {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+.pdContainer {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* min-height: 435px; */
+}
+
+.pdContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.pdImgContainer {
+    height: 70%;
+    background-size: cover;
+}
+
+
+#pd2 {
+    background-image: url("../img/productListing/pd2.jpg")
+}
+
+#pd3 {
+    background-image: url("../img/productListing/pd3.jpg")
+}
+
+#pd4 {
+    background-image: url("../img/productListing/pd4.jpg")
+}
+
+#pd5 {
+    background-image: url("../img/productListing/pd5.jpg")
+}
+
+#pd6 {
+    background-image: url("../img/productListing/pd6.jpg")
+}
+
+.pdImgContainer,
+.rating,
+.pdLocation,
+.price,
+.rarefind {
+    display: flex;
+}
+
+.pdContainer a {
+
+    height: auto;
+}
+
+.pdImgContainer img {
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.superhot {
+    background: #fff;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 3px 7px 3px 7px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.pdImgContainer .fa-heart {
+    color: white;
+}
+
+.heart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+}
+
+.pdImgContainer {
+    border-radius: 10px;
+    position: relative;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.rating {
+    width: 15%;
+}
+
+.ratePoints {
+    padding: 0 5px 0 5px;
+}
+
+.rating .fa-star {
+    color: #428A74;
+}
+
+.noOfrates {
+    color: #767676;
+
+}
+
+p.locationType {
+    margin-right: 5px;
+}
+
+.price p {
+    padding-right: 10px;
+}
+
+.priceSale {
+    color: gray;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.currentPrice b {
+    font-weight: bold;
+}
+
+.totalPrice {
+    text-decoration: underline;
+    font-weight: lighter;
+    color: #484848;
+    font-size: .9em;
+}
+
+.rarefind p {
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: .8em
+}
+
+.rarefind {
+    border-radius: 10px;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+    width: fit-content;
+    border: 1px solid gray;
+    font-size: .9rem;
+    margin-top: 5px;
+}
+
+
+/*Footer*/
+#col-Wrapper {
+    margin: 50px 150px 0 150px;
+}
+
+#finalLine-footer {
+    margin: 20px 150px 0 150px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .shown {
+        display: none;
+    }
+
+    .hidden {
+        display: block;
+    }
+
+    #bookingHeadWrapper {
+        height: fit-content;
+        min-width: 120px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: .7em;
+    }
+
+    /******* Room Listing Page ******/
+    #bodyWrapper {
+        margin: 20px 50px 0 50px;
+    }
+
+    #filter-map-wrapper {
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    #productListing {
+        margin-top: 20px;
+    }
+
+    #productsWrapper {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    }
+
+    /********* Footer **************/
+    #col-Wrapper {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #finalLine-footer {
+        margin: 20px 50px 20px 50px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    #productsWrapper {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+    }
+
+    .pdLocation {
+        flex-wrap: wrap;
+    }
+
+    .price {
+        flex-wrap: wrap;
+    }
+
+    .pdContainer {
+        /* height:485px; */
+    }
+
+    #bookingHeadWrapper {
+        display: none;
+    }
+
+}

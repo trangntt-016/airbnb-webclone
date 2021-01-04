@@ -1,0 +1,47 @@
+{{>head}}
+
+<body>
+    
+    {{>header}}
+
+    {{!-- Small navigation tabs --}}
+    <div class="bookingConfirmed">
+        <div class="bookingWrapper">
+            <div class="confirmTitle">
+                <p>Booking Confirmation</p>
+            </div>
+            <p>Thank you for choosing us. We are pleased to inform you that your reservation request has been received and confirmed.</p>
+            <p>Please check your email for your host's contact and itinerary. We'll send it within the next few minutes.</p><br>
+            <p>Booking Details</p>
+            <div class="booking-details-wrapper">
+                <div class="booking-detail">
+                    <p>Booking ID</p>
+                    <p>{{booking._id}}</p>
+                </div>
+                
+                <div class="booking-detail">
+                    <p>Check-in</p>
+                    <p>{{keywords.checkIn}}</p>
+                </div>
+                
+                <div class="booking-detail">
+                    <p>Check-out</p>
+                    <p>{{keywords.checkOut}}</p>
+                </div>
+                
+                <div class="booking-detail">
+                    <p>Total</p>
+                    <p>${{doMath keywords.noOfStays '*' rooms.price}} CAD</p>
+                </div>
+                
+                <div class="booking-detail">
+                    <p>Status</p>
+                    <p>Confirmed</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>

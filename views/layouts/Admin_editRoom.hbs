@@ -1,0 +1,262 @@
+{{>head}}
+
+<body>
+    <header>
+        <div id="headerWrapper">
+            <div id="logoHeader">
+                <a href="/admin/dashboard"><img src="/img/Client/Global/logo/greenLogo.jpg" alt=""></a>
+            </div>
+            <div class="list">
+                <a href="#property-guest">
+                    Property <br>and guests
+                </a>
+            </div>
+            <div class="list">
+                <a href="#locations">
+                    Locations
+                </a>
+            </div>
+            <div class="list">
+                <a href="#yourplace">
+                    Your Place
+                </a>
+            </div>
+            <div class="list">
+                <a href="#submit">
+                    Update
+                </a>
+            </div>
+        </div>
+    </header>
+
+    {{!-- Form --}}
+    <div class="formWrapper">
+        <form action="/admin/edit/{{_id}}?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
+            {{!-- Property and Guests --}}
+            <div class="wrapper property-guests" id="property-guest">
+                <div class="title">
+                    <h2>What kind of place are you listing?</h2>
+                </div>
+                <div class="questions">
+                    <h3>Choose a propery type</h3>
+                    <select id="place" name="places">
+                        <option value="Apartments">Apartments</option>
+                        <option value="House">House</option>
+                        <option value="Secondary Unit">Secondary Unit</option>
+                        <option value="Unique Space">Unique Space</option>
+                    </select>
+                </div>
+                <div class="questions">
+                    <h3>What will guests have?</h3>
+                    <div class="radio-wrapper">
+                        <label for="placeDetails">Entire Place</label>
+                        <input type="radio" id="placeDetails" name="entirePlace" value="Entire Place">
+                    </div>
+                    <div class="radio-wrapper">
+                        <label for="placeDetails">Private Room</label>
+                        <input type="radio" id="placeDetails" name="privateRoom" value="Entire Place">
+                    </div>
+                    <div class="radio-wrapper">
+                        <label for="placeDetails">Shared Room</label>
+                        <input type="radio" id="placeDetails" name="sharedRoom" value="Entire Place">
+                    </div>
+                </div>
+
+                <div class="questions">
+                    <h3 class="titlewithdesc">How many guests can your place accommodate?</h3>
+                    <p class="desc">Check that you have enough beds to accommodate all your guests comfortably</p>
+                    <select id="noOfGuests" name="noOfGuests">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="questions">
+                    <h3>How many beds can guests use?</h3>
+                    <select id="noOfBeds" name="noOfBeds">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="next">
+                    <a href="#locations">Next</a>
+                </div>
+            </div>
+
+            {{!-- Locations --}}
+            <div class="wrapper locations" id="locations">
+                <div class="title">
+                    <h2>Where's your place located?</h2>
+                    <p class="desc">Guest will only get your exact address once they've booked a reservation</p>
+                </div>
+                <div class="questions">
+                    <h3>* Region</h3>
+                    <div class="wrapper-err-msg">
+                        <select name="location" id="location">
+                            <option {{#ifMatched rooms.location value="AB"}}selected{{/ifMatched}} value="AB">Alberta
+                            </option>
+                            <option {{#ifMatched rooms.location value="BC"}}selected{{/ifMatched}} value="BC">British
+                                Columbia
+                            </option>
+                            <option {{#ifMatched rooms.location value="ON"}}selected{{/ifMatched}} value="ON">Ontario
+                            </option>
+                            <option {{#ifMatched rooms.location value="QC"}}selected{{/ifMatched}} value="QC">Quebec
+                            </option>
+                        </select>
+                        <div class="addRoom-errors" id="errors-location">{{errors.location}}</div>
+                    </div>
+
+                </div>
+                <div class="questions">
+                    <h3>Street address</h3>
+                    <input type="text" name="streetAdd" id="streetAddress" class="text">
+                </div>
+                <div class="questions">
+                    <h3>App, suite. (optional)</h3>
+                    <input type="text" name="addAdd" id="addAddress" class="text">
+                </div>
+                <div class="questions-horizontal">
+                    <div class="qns-wrapper ">
+                        <h3>* City</h3>
+                        <div class="wrapper-err-msg">
+                            <input type="text" name="city" id="city" class="text" value="{{rooms.city}}">
+                            <div class="addRoom-errors" id="errors-city">{{errors.city}}</div>
+                        </div>
+
+                    </div>
+                    <div class="qns-wrapper">
+                        <h3>Zipcode</h3>
+                        <input type="text" name="zipcode" id="zipcode" class="text">
+                    </div>
+                </div>
+                <div class="next">
+                    <a href="#yourplace">Next</a>
+                </div>
+            </div>
+
+            {{!-- Photos --}}
+            <div class="wrapper yourplace" id="yourplace">
+                <div class="title">
+                    <h2>Information about your place</h2>
+                </div>
+                <div class="questions">
+                    <h3 class="titlewithdesc">* Liven up your listing with photos</h3>
+                    <p class="desc">Take photos using a phone or camera. Upload at least 04 photos to publish your
+                        listing-you can always add more or edit later.</p>
+
+                    <div class="photos-wrapper">
+                        <div class="img-photos">
+                            <label for="img">Choose new image(s) to replace your old ones:</label>
+                            <div class="wrapper-err-msg">
+                                <input type="file" id="img" name="file" multiple accept="image/*" onchange="previewFiles()">
+                                <div id="preview">
+                                    <img id="singleImg" src="/img/rooms/{{rooms.image.[0]}}" alt="">
+                                    <img id="singleImg" src="/img/rooms/{{rooms.image.[1]}}" alt="">
+                                    <img id="singleImg" src="/img/rooms/{{rooms.image.[2]}}" alt="">
+                                    <img id="singleImg" src="/img/rooms/{{rooms.image.[3]}}" alt="">
+                                </div>
+                                <div class="addRoom-errors" id="errors-file">{{errors.file}}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <h3>* Create a title for your listing</h3>
+                    <div class="wrapper-err-msg">
+                        <input type="text" name="title" class="text" value="{{rooms.title}}">
+                        <div class="addRoom-errors" id="errors-title">{{errors.title}}</div>
+                    </div>
+
+                </div>
+
+                <div class="questions">
+                    <h3>* Price your space</h3>
+                    <div class="wrapper-err-msg">
+                        <input type="text" name="price" class="text" value="{{rooms.price}}">
+                        <div class="addRoom-errors" id="errors-price">{{errors.price}}</div>
+                    </div>
+
+                </div>
+                <div class="questions">
+                    <h3>* Describe your place</h3>
+                    <div class="wrapper-err-msg">
+                        <input type="text" name="description" class="text" value="{{rooms.description}}">
+                        <div class="addRoom-errors" id="errors-desc">{{errors.description}}</div>
+                    </div>
+
+                </div>
+                <div class="next">
+                    <a href="#submit">Next</a>
+                </div>
+            </div>
+
+            {{!-- Submit --}}
+            <div class="wrapper submit" id="submit">
+                <div class="title">
+                    <h2>Finishing your listing to start earning</h2>
+                    <p class="desc">You can always edit your listing after you publish it</p>
+                </div>
+                <div class="reviewList">
+                    <i class="fas fa-check"></i>
+                    <p>Properties and Guests</p>
+                </div>
+                <div class="reviewList">
+                    <i class="fas fa-check"></i>
+                    <p>Locations</p>
+                </div>
+                <div class="reviewList">
+                    <i class="fas fa-check"></i>
+                    <p>Your place</p>
+                </div>
+                <div class="reviewList">
+                    <i class="fas fa-check"></i>
+                    <p>Properties and Guests</p>
+                </div>
+                <div class="wrapper-submission">
+                    <input type="submit" value="Update" id="submit">
+                    <p id="confirmationText">Your property's information is updated!</p>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    {{!-- display the confirmation text after submitting --}}
+    <script>
+        //display the confirmation text after submitting 
+        function previewFiles() {
+
+            var preview = document.querySelector('#preview');
+            var files = document.querySelector('input[type=file]').files;
+
+            preview.innerHTML = '';
+            function readAndPreview(file) {
+
+                // Make sure `file.name` matches our extensions criteria
+                if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                    var reader = new FileReader();
+
+                    reader.addEventListener("load", function () {
+                        var image = new Image();
+                        image.title = file.name;
+                        image.src = this.result;
+                        image.id = "singleImg";
+                        preview.appendChild(image);
+                    }, false);
+
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            if (files) {
+                [].forEach.call(files, readAndPreview);
+            }
+        }
+    </script>
+</body>

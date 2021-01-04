@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nguyen Thi Thuy Trang - ID: 131104192">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Result Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/resIndex.css">
+  <link rel="stylesheet" href="/css/searchResult.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div id="headerAlt">
+      <div id="headerWrapper">
+        <div id="logoHeader">
+          <a href="/"><img src="/img/Client/Global/logo/whileLogoSansName.jpg" alt=""></a>
+        </div>
+        <div id="bookingHeadWrapper">
+          <div id="citySearch">{{convertStr keywords.location}}</div>
+          <hr>
+          <div id="timeSearch">{{convertDate keywords.checkIn}} - {{convertDate keywords.checkOut}}</div>
+          <hr>
+          <div>{{keywords.noOfGuests}} Guests</div>
+        </div>
+        <div id="userHeadWrapper">
+          {{#if user}}
+          {{#if user.isAdmin}}
+          <a href="/admin/dashboard" id="signUpBtn" style="text-decoration: none;">Admin Dashboard</a>
+          <a href="/admin/logout" id="signUpBtn" style="text-decoration: none;">Log Out</a>
+          {{else}}
+          <a href="/user/dashboard" id="signUpBtn" style="text-decoration: none;">User Dashboard</a>
+          <a href="/user/logout" id="signUpBtn" style="text-decoration: none;">Log Out</a>
+          {{/if}}
+          {{else}}
+          <a id="signUpBtn" onclick="display_signUp()">Sign Up</a>
+          <a class="logInBtn" id="userHeadContainer" onclick="display_logIn()">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-user-circle"></i>
+          </a>
+          {{>logInForm}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  {{!-- Room Listing Page --}}
+  <div id="bodyAlt">
+    <div id="bodyWrapper">
+      <div id="content-header-wrapper">
+        <div id="titlewrapper">
+          <h4>Stays in {{convertStr keywords.location}}</h4>
+        </div>
+      </div>
+
+      <div id="filter-map-wrapper">
+        <div id="filter">
+          <div class="hidden">Filters</div>
+          <div class="shown">Cancellation flexibility</div>
+          <div class="shown">Type of place</div>
+          <div class="shown">Price</div>
+          <div class="shown">Instant Book</div>
+          <div class="shown">More filters</div>
+        </div>
+        <div id="map">
+          {{!-- <div>
+            <i class="far fa-map"></i>
+            Show map
+          </div> --}}
+        </div>
+      </div>
+
+      <div id="productListing">
+        <p id="alert">
+          <i class="fas fa-exclamation-triangle"></i>
+          <b>Check travel restrictions before booking. </b>Please review and follow government travel guidelines. <a
+            href="#">Learn more.</a>
+        </p>
+        <div id="productsWrapper">
+          {{#each rooms}}
+
+          <div class="pdContainer">
+            <a href="/room/{{_id}}">
+              <div id="pd1" class="pdImgContainer">
+                <img src="img/rooms/{{image.[0]}}" alt="">
+                {{#if superhot}}
+                <div class="superhot">SUPERHOT</div>
+                {{/if}}
+                <div class="heart"><i class="far fa-heart"></i></div>
+              </div>
+            </a>
+            <div id="wrapperpdContent">
+              <div class="pdContent">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <p class="ratePoints">{{ratePoints}}</p>
+                  <p class="noOfrates">({{noOfRates}})</p>
+                </div>
+                <div class="pdLocation">
+                  <p class="locationType">{{convertStr location}}</p>
+                  <p> - {{city}}</p>
+                </div>
+                <div class="pdTitle" style="font-weight:bold;">{{title}}</div>
+                <div class="price">
+                  {{#if priceSale}}
+                  <p class="priceSale">${{priceSale}}</p>
+                  {{/if}}
+                  <p class="currentPrice"><b>${{price}} CAD/</b>night</p>
+                </div>
+                <p class="totalPrice">${{doMath noOfStays '*' price}} CAD total</p>
+              </div>
+              {{#if rareFind}}
+              <div class="rarefind">
+                <i class="fas fa-gem"></i>
+                <p>Rare find</p>
+              </div>
+              {{/if}}
+            </div>
+
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---------------Footer----------------->
+  {{>footer}}
+
+  <!----- Modal Section: Sign Up ------->
+  {{>signUpForm}}
+
+  {{{script}}}
+
+</html>

@@ -1,0 +1,46 @@
+{
+  "name": "web322_airbnb",
+  "version": "1.0.0",
+  "description": "Learning Nodejs,Express,Handlebars,etc.",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.1",
+    "handlebars": "^4.7.6",
+    "hbs": "^4.1.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.13",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.14",
+    "nodemon": "^2.0.6",
+    "pg": "^8.4.2",
+    "pg-hstore": "^2.3.3",
+    "request": "^2.88.2",
+    "sequelize": "^6.3.5",
+    "uuid": "^8.3.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "TrangNguyen_stdID_131104192_tnguyen-thi-thuy@myseneca.ca",
+  "license": "MIT",
+  "keywords": [
+    "Learning",
+    "NodeJS",
+    "Express",
+    "HandleBars",
+    "etc."
+  ]
+}

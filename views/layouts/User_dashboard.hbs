@@ -1,0 +1,49 @@
+{{>head}}
+
+<body>
+    <!----- Header and Navigation Bar------->
+    {{>header}}
+    <div id="dashboard">
+        <div id="dashboard-wrapper">
+            <h2>Hello {{user.fname}} {{user.lname}},</h2>
+            <br />
+            {{#if bookings}}
+            <h5>Here are your history bookings:</h2>
+            <div id="productListing"style="margin-top: 30px;">
+                <div id="productsWrapper">
+                    {{#each bookings}}
+
+                    <div class="pdContainer">
+                        <a href="#">
+                            <div id="pd1" class="pdImgContainer">
+                            </div>
+                        </a>
+                        <div id=" wrapperpdContent">
+                            <div class="pdContent">
+                                <div style="font-weight:bold;">Booking #{{roomID}}</div><br>
+                                <div>
+                                    <p style="margin: 0;">Check-in: {{convertDate checkIn}}</p><br>
+                                    <p style="margin: 0;">Check-out: {{convertDate checkOut}}</p><br>
+                                    <p style="margin: 0;">Created On: {{convertDate createdOn}}</p><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{else}}
+            <h5>You haven't booked any rooms yet.</h2>
+            {{/if}}
+        </div>
+    </div>
+    <!------------- Footer ------------->
+    {{>footer}}
+    <!----- Modal Section: Sign Up ------->
+    {{#if signup}}
+    {{>signUpForm}}
+    {{/if}}
+    {{{script}}}
+</body>
+
+</html>

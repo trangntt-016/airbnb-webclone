@@ -1,0 +1,492 @@
+@import url("style.css");
+
+@media only screen and (max-width: 1100px) {
+    .container-days div {
+        width: calc(17em/7);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    /*info Section*/
+    #infoSection .before::before {
+        display: none;
+    }
+
+    /*Info Section*/
+    #left-hand {
+        display: none;
+    }
+
+    .right-hand {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    iframe {
+        align-items: center;
+        width: 100%;
+        height: 30vh
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #headerWrapper {
+        margin-left: 50px;
+        margin-right: 50px;
+        justify-content: space-between;
+    }
+
+    #userHeadWrapper {
+        width: 100%;
+    }
+
+    #searchIcon {
+        font-size: 50%;
+    }
+
+    /*search form*/
+    .container-days div {
+        width: calc(17em/7);
+    }
+
+    /*Modal Section: signUp Page*/
+    .close {
+        top: 10px;
+        right: 40px;
+    }
+
+    #header-signUp img {
+        width: 34%;
+        border-radius: 5px;
+    }
+
+    #alt-signUp {
+        display: none;
+    }
+
+    #header-signUp p {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+
+    #wrapper-body-data {
+        height: 100%;
+    }
+
+    #wrapper-input {
+        width: 100%;
+    }
+
+    #form-signUp input {
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+        padding: 5px 0 5px 5px;
+        font-size: 1rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    #form-signUp .wrapper-err-msg {
+        margin-top: 10px;
+    }
+
+    #body-signUp {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #wrapper-btnIcon {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #wrapper-footer-signUp {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #wrapperIcons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #wrapper-btnIcon .btn {
+        margin: 0;
+        border-radius: 10px;
+    }
+
+    #wrapper-btnIcon .btn {
+        padding: 5px 0px 25px 16px;
+        margin-bottom: 10px;
+    }
+
+    #wrapper-btnIcon p {
+        display: block;
+        position: relative;
+        background: #fff;
+        padding: 0 10px 0 10px;
+        z-index: 0;
+    }
+
+    #wrapper-btnIcon p:before {
+        content: "";
+        margin-right: 34px;
+        display: block;
+        width: 60px;
+        height: 1px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: -1;
+    }
+
+    #wrapper-btnIcon p:after {
+        content: "";
+        margin-left: 34px;
+        display: block;
+        width: 60px;
+        height: 1px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+    }
+
+    #wrapperIcons {
+        margin-top: 10px;
+    }
+
+    /* Promotion Section */
+
+    /* Reduce margin for layout */
+    #bookingSearch {
+        margin: 50px 50px 0 50px;
+    }
+
+    #promotion {
+        margin: 50px 50px 0 50px
+    }
+
+    .header-infoSection {
+        margin-left: 50px;
+    }
+
+    .containersWrapper {
+        margin: 0 50px 0 50px;
+    }
+
+    #col-Wrapper {
+        margin: 50px 50px 0 50px
+    }
+
+    #finalLine-footer {
+        margin: 20px 50px 0 50px
+    }
+
+    #left {
+        min-width: fit-content;
+        flex-wrap: wrap;
+    }
+
+    /*infoSection*/
+    #infoSection {
+        margin-top: 50px;
+    }
+
+    #infoSection .containersWrapper .container-info h4 {
+        height: fit-content;
+    }
+
+    #wrapperblock {
+        margin: 50px 50px 0 50px;
+    }
+
+    /*Footer*/
+    #bg-footer {
+        margin-top: 50px;
+    }
+
+    ul#copywrite {
+        margin-bottom: 5px;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    /*nav - bar*/
+    #headerWrapper {}
+
+
+    #bookingSearch {
+        background: #fff;
+        margin: 0;
+        width: unset;
+        justify-self: center;
+        position: static;
+        justify-content: center;
+        height: fit-content;
+    }
+
+    #bookingBanner {
+        margin: 0;
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+    }
+
+    #form-bookingSearch {
+        position: static;
+    }
+
+    .calendar {
+        bottom: 0em;
+    }
+
+    /*Promotion Section */
+    #promotion {
+        margin: 50px 50px 0px 50px;
+    }
+
+    #promotionWrapper {
+        flex-direction: column;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 90px 90px;
+        width: 100%;
+    }
+
+    #discountWrapper {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #discountContainer {
+        width: 100%;
+    }
+
+    #discount-text {
+        font-size: 3em;
+    }
+
+
+    /*form signup*/
+    .bg-modal {
+        height: fit-content;
+    }
+
+    .signUp {
+        min-width: 0;
+        max-width: 81%;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+
+    #header-signUp {
+        margin-bottom: 0px;
+    }
+
+    .close {
+        font-size: 110%;
+        top: 30px;
+    }
+
+    #header-signUp p,
+    #header-signUp a {
+        font-size: 80%;
+    }
+
+    #form-signUp {
+        min-height: 0px;
+        min-width: 0px;
+    }
+
+    #form-signUp input {
+        font-size: 80%;
+        width: 95%;
+    }
+
+    #birthday h4 {
+        font-size: 80%;
+    }
+
+    #birthday p {
+        font-size: 80%;
+        width: 100%;
+    }
+
+    #wrapper-bdselect {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: end;
+    }
+
+    #wrapper-bdselect select {
+        width: 80%;
+        font-size: 80%;
+    }
+
+    #DOB {
+        margin: 5px 0 5px 0;
+    }
+
+    #wrapper-footer-signUp {
+        width: 100%;
+    }
+
+    #wrapper-btnIcon .btn {
+        font-size: 80%;
+    }
+
+    #wrapper-btnIcon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /*logIn*/
+    .logIn {
+        width: 50vw;
+        top:18%;
+    }
+
+    #logIn-down {}
+
+    #form-logIn label {
+        font-size: 70%;
+    }
+
+    #form-logIn #pwdWrapper a {
+        font-size: 44%;
+    }
+
+    #form-logIn #pwdWrapper {
+        align-items: center;
+    }
+
+    #form-logIn input {
+        font-size: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 415px) {
+
+    #bookingSearch div,
+    #bookingSearch p {
+        font-size: .9em;
+    }
+
+    .calendar {
+        height: fit-content;
+    }
+
+    .container-days div {
+        width: calc(26em/7);
+    }
+
+    #form-bookingSearch input[type=text] {
+        font-size: 0.7em;
+    }
+
+    #container-departure hr,
+    #container-guests hr {
+        margin: 0 2px 0 2px;
+    }
+
+}
+
+@media only screen and (max-width:380px) {
+
+    #checkIn,
+    #checkOut {
+        text-align: left;
+    }
+
+    #adult,
+    #children {
+        text-align: center;
+    }
+
+    .container-days div {
+        width: calc(23em/7);
+    }
+
+    #form-bookingSearch input[type=text] {
+        font-size: 0.6em;
+    }
+
+
+}
+
+@media only screen and (max-width: 360px) {
+
+    #adult,
+    #children {
+        text-align: left;
+    }
+
+    .container-days div {
+        width: calc(22em/7);
+    }
+
+    #form-bookingSearch input[type=text] {
+        font-size: 0.6em;
+    }
+    .logIn{
+        top:20%;
+    }
+
+
+}
+
+@media only screen and (max-width:320px) {
+    .container-days div {
+        width: calc(19em/7);
+    }
+
+    .logIn {
+        left: 0px;
+        top:20%
+    }
+}
+
+@media only screen and (max-width:280px) {
+    .container-days div {
+        width: calc(16em/7);
+    }
+
+    /*logIn*/
+    .logIn {
+        width: 50vw;
+    }
+
+    #logIn-down {}
+
+    #form-logIn label {
+        font-size: 70%;
+    }
+
+    #form-logIn #pwdWrapper a {
+        font-size: 44%;
+    }
+
+    #form-logIn #pwdWrapper {
+        align-items: center;
+    }
+
+    #form-logIn input {
+        font-size: 80%;
+    }
+
+}

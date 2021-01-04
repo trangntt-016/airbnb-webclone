@@ -1,0 +1,28 @@
+<header>
+    <div id="headerAlt" onclick="close_logIn(event)">
+        <div id="headerWrapper">
+            <div id="logoHeader">
+                <a href="/"><img src="/img/Client/Global/logo/whileLogoSansName.jpg" alt=""></a>
+            </div>
+            <!-- Note: Don't forget function(event) to trigger the target attr --->
+            <div id="userHeadWrapper">
+                {{#if user}}
+                {{#if user.isAdmin}}
+                <a href="/admin/dashboard" id="signUpBtn"style="text-decoration: none;">Admin Dashboard</a>
+                <a href="/admin/logout" id="signUpBtn"style="text-decoration: none;">Log Out</a>
+                {{else}}
+                <a href="/user/dashboard" id="signUpBtn"style="text-decoration: none;">User Dashboard</a>
+                <a href="/user/logout" id="signUpBtn"style="text-decoration: none;">Log Out</a>
+                {{/if}}
+                {{else}}
+                <a id="signUpBtn" onclick="display_signUp()">Sign Up</a>
+                <a class="logInBtn" id="userHeadContainer" onclick="display_logIn()">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                {{>logInForm}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</header>

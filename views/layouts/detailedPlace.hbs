@@ -1,0 +1,462 @@
+{{>head}}
+
+<body
+<header>
+    <div id="headerAlt"onclick="close_logIn(event)">
+      <div id="headerWrapper">
+        <div id="logoHeader">
+              <a href="/"><img src="/img/Client/Global/logo/whileLogoSansName.jpg" alt=""></a>
+        </div>
+        <div id="bookingHeadWrapper">
+          <div id="citySearch">{{convertStr keywords.location}}</div>
+          <hr>
+          <div id="timeSearch">{{convertDate keywords.checkIn}} - {{convertDate keywords.checkOut}}</div>
+          <hr>
+          <div>{{keywords.noOfGuests}} Guests</div>
+        </div>
+        <div id="userHeadWrapper">
+                {{#if user}}
+                {{#if user.isAdmin}}
+                <a href="/admin/dashboard" id="signUpBtn"style="text-decoration: none;">Admin Dashboard</a>
+                <a href="/admin/logout" id="signUpBtn"style="text-decoration: none;">Log Out</a>
+                {{else}}
+                <a href="/user/dashboard" id="signUpBtn"style="text-decoration: none;">User Dashboard</a>
+                <a href="/user/logout" id="signUpBtn"style="text-decoration: none;">Log Out</a>
+                {{/if}}
+                {{else}}
+                <a id="signUpBtn" onclick="display_signUp()">Sign Up</a>
+                <a class="logInBtn" id="userHeadContainer" onclick="display_logIn()">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                {{>logInForm}}
+                {{/if}}
+            </div>
+      </div>
+    </div>
+  </header>
+
+    {{!-- Small navigation tabs --}}
+    <div class="detailsPage wrapper smallnav">
+        <div class="detailsPage" id="smallnav">
+            <div id="left-nav">
+                <a href="index.html">Home</a>
+                <p>></p>
+                <a href="roomListingPage.html">Toronto Apartments</a>
+                <p>></p>
+                <a href="detailsPage.html">Private room in house hosted by Robin</a>
+            </div>
+            <div id="right-nav">
+                <p>See all <span><b>2849</b></span> properties in <span>Toronto</span></p>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Room section --}}
+    <div class="detailsPage wrapper room-section">
+        <div class="detailsPage room-section containers">
+            <div class="detailsPage room-section wrapper left">
+                <div class="detailsPage room-section gallery">
+                    <div class="detailsPage gallery-container w-2 h-2">
+                        <div class="detailsPage price-wrapper">
+                            <div class="detailsPage price">
+                                <p>from 22 CAD</p>
+                            </div>
+                            <div class="detailsPage discount">
+                                <p>64% discount</p>
+                            </div>
+                        </div>
+                        <div class="detailsPage gallery-item">
+                            <img src="img/rooms/{{image.[0]}}" alt="">
+                        </div>
+                        <div class="detailsPage hidden">
+                            <p>See all photos</p>
+                        </div>
+                    </div>
+                    <div class="detailsPage gallery-container w-2">
+                        <div class="detailsPage save-wrapper">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="detailsPage gallery-item">
+                            <img src="img/rooms/{{image.[1]}}" alt="">
+                        </div>
+                    </div>
+                    <div class="detailsPage gallery-container">
+                        <div class="detailsPage gallery-item">
+                            <img src="img/rooms/{{image.[2]}}" alt="">
+                        </div>
+                    </div>
+                    <div class="detailsPage gallery-container">
+                        <div class="detailsPage gallery-item">
+                            <div id="last-img"></div>
+                            <p>See all photos</p>
+                            <img src="img/rooms/{{image.[3]}}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detailsPage room-section left title-apartment">
+                    <div class="detailsPage room-section left title-apartment wrapper">
+                        <h2>Private room in house hosted by Robin</h2>
+                        <div class="fa-star-wrapper">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <a href="">1750 Finch Avenue East, Toronto</a>
+                </div>
+
+                <div class="detailsPage room-section left highlights-review">
+                    <div class="detailsPage room-section left highlights wrapper">
+                        <div class="detailsPage room-section left highlights-wrapper">
+                            <h4>Property highlights</h3>
+                                <h4>Read all 2,931 reviews</h4>
+                        </div>
+                        <div class="property-highlights-wrapper">
+                            <div class="two-property-highlights-wrapper">
+                                <div class="one-property-highlights-wrapper">
+                                    <div class="property-highlights iconwrapper">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="property-highlights textwrapper">
+                                        <h5>Entire Home</h5>
+                                        <h6>You’ll have the townhouse to yourself.</h6>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-property-highlights-wrapper">
+                                    <div class="property-highlights iconwrapper">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+
+                                    <div class="property-highlights textwrapper">
+                                        <h5>Enhanced Clean</h5>
+                                        <h6>This host committed to a rigorous cleaning protocol</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="two-property-highlights-wrapper">
+                                <div class="one-property-highlights-wrapper">
+                                    <div class="property-highlights iconwrapper">
+                                        <i class="fas fa-door-open"></i>
+                                    </div>
+
+                                    <div class="property-highlights textwrapper">
+                                        <h5>Self check-in</h5>
+                                        <h6>Check yourself in with the keypad.</h6>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-property-highlights-wrapper">
+                                    <div class="property-highlights iconwrapper">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="property-highlights textwrapper">
+                                        <h5>Free cancellation</h5>
+                                        <h6>Get Details</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="detailsPage left reviews-wrapper">
+                        <div id="arrow-left" class="arrow">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div id="slider">
+                            <div class="slide review1">
+                                <h5>Overall, we had a perfect stay and would stay only there if we are ever back in
+                                    Toronto.</h5>
+                                <div class="reviewer-wrapper">
+                                    <h6 class="reviewer">Rauelle</h6>
+                                    <hr>
+                                    <h6 class="date-of-reviews">November 6, 2018</h6>
+                                </div>
+                            </div>
+                            <div class="slide review2">
+                                <h5>The location is perfect which is only 3 minute walk to station, and takes only 10
+                                    minutes by metro to CN Tower.</h5>
+                                <div class="reviewer-wrapper">
+                                    <h6 class="reviewer">Rauelle</h6>
+                                    <hr>
+                                    <h6 class="date-of-reviews">November 6, 2018</h6>
+                                </div>
+                            </div>
+                            <div class="slide review3">
+                                <h5>Pros: walking distance to Union subway station, opposite High Park, clean.</h5>
+                                <div class="reviewer-wrapper">
+                                    <h6 class="reviewer">Rauelle</h6>
+                                    <hr>
+                                    <h6 class="date-of-reviews">November 6, 2018</h6>
+                                </div>
+                            </div>
+                            <div class="slide review4">
+                                <h5>The location is perfect which is only 3 minute walk to station, and takes only 10
+                                    minutes by metro to CN Tower.</h5>
+                                <div class="reviewer-wrapper">
+                                    <h6 class="reviewer">Rauelle</h6>
+                                    <hr>
+                                    <h6 class="date-of-reviews">November 6, 2018</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="arrow-right" class="arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="wrapper-button">
+                            <div id="slider-button-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="detailsPage room-section wrapper right">
+                <div class="detailsPage right wrapper rating-place">
+                    <div class="rating-place upper">
+                        <div class="rating-score">
+                            <p>8.3</p>
+                        </div>
+                        <div class="rating-place wrapper upper rank">
+                            <h3 class="ranking">Excellent</h3>
+                            <p class="better-than-last">3.2% this month</p>
+                            <p>/10 <a href="#">(2,931 reviews)</a></p>
+                        </div>
+                    </div>
+                    <div class="rating-place wrapper down">
+                        <div class="top-features">
+                            <p>Housekeeping</p>
+                            <p>31</p>
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="top-features">
+                            <p>Breakfast</p>
+                            <p>1</p>
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="top-features">
+                            <p>Locations</p>
+                            <p>1</p>
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailsPage right wrapper map-location">
+                    <div class="map-location-wrapper">
+                        <div class="detailsPage right wrapper map-location map">
+                            <div class="detailsPage wrapper-map">
+                                <a href="#map">See Map</a>
+                            </div>
+                            <div class="wrapText">
+                                <i class="fas fa-award"></i>
+                                <p><b>Exceptional location</b></p>
+                                <p> - Inside city center</p>
+                            </div>
+                        </div>
+                        <div class="detailsPage right wrapper map-location location">
+                            <p><b>Popular landmarks</b></p>
+                            <div class="listLocation-km">
+                                <p class="text-left">CN Tower</p>
+                                <p class="text-right">1.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Royal Ontario Museum</p>
+                                <p class="text-right">2.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Toronto Islands</p>
+                                <p class="text-right">1.41 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Ripley's Aquarium of Canada</p>
+                                <p class="text-right">1.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Art Gallery Ontario</p>
+                                <p class="text-right">2.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Toronto Zoo</p>
+                                <p class="text-right">1.41 km</p>
+                            </div>
+                            <hr>
+                            <p><b>Popular landmarks</b></p>
+                            <div class="listLocation-km">
+                                <p class="text-left">CN Tower</p>
+                                <p class="text-right">1.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Royal Ontario Museum</p>
+                                <p class="text-right">2.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Toronto Islands</p>
+                                <p class="text-right">1.41 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Ripley's Aquarium of Canada</p>
+                                <p class="text-right">1.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Art Gallery Ontario</p>
+                                <p class="text-right">2.21 km</p>
+                            </div>
+                            <div class="listLocation-km">
+                                <p class="text-left">Toronto Zoo</p>
+                                <p class="text-right">1.41 km</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="see-nearby">
+                        <a href="">
+                            SEE NEARBY PLACES
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-wrapper">
+        <div class="map-container" id="map">
+
+        </div>
+    </div>
+
+    {{!-- Host Information --}}
+    <div class="host-info-wrapper">
+        <div class="host-info-container">
+            <div class="host-title-wrapper">
+                <img src="./img/Server/ID001/host_001.jpg" alt="">
+                <div class="host-info-textwrapper">
+                    <h3>Hosted by Krazy Tracy</h3>
+                    <h5>Joined in December 2019</h5>
+                </div>
+            </div>
+            <div class="summary-host-wrapper">
+                <div class="summary-host">
+                    <i class="fas fa-star"></i>
+                    <p>21 Reviews</p>
+                </div>
+                <div class="summary-host">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Identity verified</p>
+                </div>
+                <div class="summary-host">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Identity verified</p>
+                </div>
+                <div class="summary-host">
+                    <i class="fas fa-medal"></i>
+                    <p>Superhost</p>
+                </div>
+
+            </div>
+            <div class="host-info-details-wrapper">
+                <div class="host-info-details left wrapper">
+                    <div class="host-intro-wrapper">
+
+                    </div>
+                    <div class="host-intro">
+                        <p>
+                            Krazy Tracy is the owner of a property management company specializing in Airbnb Rentals in
+                            the Blue
+                            ipsam, type=Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic fugiat dolores
+                            eligendi ratione consequatur inventore voluptatum magnam voluptas ad ullam accusamus
+                            obcaecati maxime, omnis ut molestiae iste? Obcaecati, consectetur optio. facere, asperiores
+                            voluptas cumque incidunt quod nam eius? Quis deleniti cum itaque
+                            nisi laudantium <span id="dots">...</span><span id="more">ab alias fuga type=Lorem ipsum
+                                dolor sit amet consectetur adipisicing elit.
+                                Velit quisquam
+                                dignissimos neque repudiandae quasi sequi magni distinctio ut, non perferendis numquam
+                                repellendus, quae, omnis totam incidunt possimus! Possimus, libero saepe! rience to the
+                                next level. We are a local company
+                                that loves what we do and where we
+                                live. We take joy in bringing owners and guests together.</span><span id="readmore">read
+                                more</span>
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="host-info-details right wrapper">
+
+                    <p>Response rate: 100%</p>
+                    <p>Response time: within an hour</p>
+                    <div class="contact-host">Contact Host</div>
+                </div>
+
+            </div>
+            <h4>During your stay</h4>
+            <p>
+                We will be available anytime to help with questions or anything needed by the Airbnb App, text or phone.
+            </p>
+            <h4>Hosting Blue is a Superhost</h4>
+            <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
+        </div>
+    </div>
+    <!------------- Footer ------------->
+    {{>footer}}
+    <!----- Modal Section: Sign Up ------->
+    {{>signUpForm}}
+    {{!-- Reserve --}}
+    <div class="reserve-wrapper">
+        <div class="reserve-container">
+            <div class="reserve-wrapper price-review">
+                <div class="price-wrapper">
+                    <h4><b>${{doMath keywords.noOfStays '*' rooms.price}} CAD </b> / {{keywords.noOfStays}} nights - {{keywords.noOfGuests}} Guests</h4>
+                    <div class="review-wrapper">
+                        <i class="fa fa-star"></i>
+                        <h5>5.0</h5>
+                        <h5>(21)</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="reserve-btn">
+                {{#if user}}
+                    <a href="/book/{{rooms._id}}">Reserve</a>
+                {{else}}
+                    <a onclick="display_logIn()">Reserve</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+            // Map option
+            var options = {
+                zoom: 10,
+                center: {
+                    lat: 43.6532,
+                    lng: -79.3832
+                }
+            }
+
+            // New map
+            var map = new google.maps.Map(document.getElementById("map"), options);
+
+            // Add marker
+            var map = new google.maps.Marker({
+                position: {
+                    lat: 43.7955,
+                    lng: -79.3496
+                },
+                map: map
+            })
+        }
+    </script>
+
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDR_RAfsf2bC3AJA-RFE73SuxzZfnJ8CI&callback=initMap">
+    </script>
+
+
+    {{{script}}}
+</body>
