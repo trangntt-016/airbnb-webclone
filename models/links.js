@@ -1,11 +1,10 @@
 var links = {
-    general: [
-        {
+    general: [{
             "url": "/",
             "render": "index",
             "pageName": "AirBnB - Main Page",
             "css": `<link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/resIndex.css">`,
+                    <link rel="stylesheet" href="/css/resIndex.css">`,
             "script": `<script src="js/MainPage/bookingSearchForm.js"></script>
                     <script src="js/Global/signUpLogInForm.js"></script>
                     <script src="js/client.js"></script>
@@ -36,7 +35,7 @@ var links = {
     `
         },
         {
-            "url":"",
+            "url": "",
             "render": "Gen_bookingConfirm",
             "pageName": "Thank You",
             "css": `<link rel="stylesheet" href="/css/style.css">
@@ -65,14 +64,15 @@ var links = {
             "css": `<link rel="stylesheet" href="/css/addRoom.css">`
         }
     ],
-    user:[{
+    user: [{
         "url": "/dashboard",
-            "render": "User_dashboard",
-            "pageName": "User Dashboard Page",
-            "css": `<link rel="stylesheet" href="/css/style.css">
+        "render": "User_dashboard",
+        "pageName": "User Dashboard Page",
+        "css": `<link rel="stylesheet" href="/css/style.css">
             <link rel="stylesheet" href="/css/resIndex.css">
             <link rel="stylesheet" href="/css/searchResult.css">
             <link rel="stylesheet" href="/css/dashboard.css">`
     }]
+
 }
 module.exports = links;

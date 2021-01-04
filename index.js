@@ -36,6 +36,8 @@ app.use(bodyParser.urlencoded({
 app.set('views', path.join(__dirname, "/views/layouts"));
 app.set("view engine", ".hbs");
 hbs.registerPartials(path.join(__dirname + '/views/partials'));
+
+// Set up Register Helpers
 hbs.registerHelper('ifMatched', function (string, options) {
     // options.hash.values are 'AB', 'ON', etc.
     if (string === options.hash.value) {
@@ -55,8 +57,7 @@ hbs.registerHelper('convertStr', function (string) {
         Str = "Ontario";
     } else if (string === "QC") {
         Str = "Quebec";
-    }
-    else if(string ==="BC"){
+    } else if (string === "BC") {
         Str = "British Columbia";
     }
     return Str;
@@ -65,22 +66,22 @@ hbs.registerHelper('convertStr', function (string) {
 hbs.registerHelper('convertDate', function (str) {
     var Str = "";
     // check if it's of type string
-    if(typeof str ==='string'||str instanceof String){
-        Str = str.substr(str.indexOf(' ')+1,str.indexOf(',')-str.indexOf(' ')-1)+str.substr(str.indexOf(',')+1,4)+' '+str.substr(-2);
+    if (typeof str === 'string' || str instanceof String) {
+        Str = str.substr(str.indexOf(' ') + 1, str.indexOf(',') - str.indexOf(' ') - 1) + str.substr(str.indexOf(',') + 1, 4) + ' ' + str.substr(-2);
     }
     //check if it is of type Date
-    else{
+    else {
         Str = str.toISOString();
-        Str = Str.substr(0,10);
+        Str = Str.substr(0, 10);
     }
     return Str;
 });
 
-hbs.registerHelper('doMath', function (num1, operator,num2) {
+hbs.registerHelper('doMath', function (num1, operator, num2) {
     var result = 0;
-    if(operator == '*'){
-        result = num1*num2;
-        return result;
+    if (operator == '*') {
+        result = num1 * num2;
+        return result.toFixed(2);
     }
     return result;
 
@@ -92,7 +93,6 @@ app.use('/', express.static('public'));
 app.use('/user', express.static('public'));
 app.use('/admin', express.static('public'));
 app.use('/room', express.static('public'));
-
 
 
 
