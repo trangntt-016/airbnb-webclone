@@ -33,17 +33,17 @@ A replica of Airbnb Website that provides a platform for both hosts and guests. 
   <li>Backend Framework: Express</li>
   <li>Database Management: MongoDB</li>
   <li>Handlebars, Javascript, HTML, CSS (100%)</li>
+  <li>Deploying on Heroku</li>
 </ul>
 
 
 ## Run website locally
-
 Clone the repo
    ```sh
    git clone https://https://github.com/trangntt-016/webcloning
    cd webclone
    ```
+## Visit my website
+You can have a look at my website and experience the features at [here](https://webclone.herokuapp.com/)
 ## Inspiration
 Project's design and features were inspired by [AirBnB Website](https://www.airbnb.ca/).
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
