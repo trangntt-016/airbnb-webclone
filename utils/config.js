@@ -7,4 +7,7 @@ module.exports = {
 // OTHER accounts
 //sendEmail: web322.trangnguyen@gmail.com - pass:krazytracy
 // user: web322.seneca.user@gmail.com - pass: abcABC123456
-// admin: web322.trangnguyen@gmail.com - pass:krazytracy
+// admin: admin1@gmail.com - pass:abcABC123456
+// admin: admin2@gmail.com - pass:abcABC123456
+
+
