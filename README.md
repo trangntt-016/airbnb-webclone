@@ -1,4 +1,4 @@
-# Web Cloning
+# web-cloning
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/trangntt-016/webcloning?color=--color-scale-green-6&style=flat-square)&nbsp;
 ![GitHub language count](https://img.shields.io/github/languages/count/trangntt-016/webcloning?color=orange&style=flat-square)
 
